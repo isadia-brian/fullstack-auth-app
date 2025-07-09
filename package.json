@@ -1,0 +1,29 @@
+{
+  "name": "fullstack-auth-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full-stack authentication app with Express and Next.js",
+  "scripts": {
+    "dev": "concurrently \"bun run dev:express-backend\" \"bun run dev:next-auth-frontend\"",
+    "dev:express-backend": "cd express-backend && bun run dev",
+    "dev:next-auth-frontend": "cd next-auth-frontend && bun run dev",
+    "build": "bun run build:express-backend && bun run build:next-auth-frontend",
+    "build:express-backend": "cd express-backend && bun run build",
+    "build:next-auth-frontend": "cd next-auth-frontend && bun run build",
+    "start": "concurrently \"bun run start:express-backend\" \"bun run start:next-auth-frontend\"",
+    "start:express-backend": "cd express-backend && bun start",
+    "start:next-auth-frontend": "cd next-auth-frontend && bun start",
+    "install:all": "bun install && cd express-backend && bun install && cd ../next-auth-frontend && bun install",
+    "clean": "rimraf node_modules express-backend/node_modules next-auth-frontend/node_modules",
+    "lint": "cd express-backend && bun run lint && cd ../next-auth-frontend && bun run lint",
+    "test": "cd express-backend && bun test && cd ../next-auth-frontend && bun test"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "rimraf": "^5.0.5"
+  },
+  "workspaces": [
+    "express-backend",
+    "next-auth-frontend"
+  ]
+}
