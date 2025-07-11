@@ -19,11 +19,15 @@
     "test": "cd express-backend && bun test && cd ../next-auth-frontend && bun test"
   },
   "devDependencies": {
+    "@types/connect-mongo": "^3.1.6",
     "concurrently": "^8.2.2",
     "rimraf": "^5.0.5"
   },
   "workspaces": [
     "express-backend",
     "next-auth-frontend"
-  ]
+  ],
+  "dependencies": {
+    "connect-mongo": "^5.1.0"
+  }
 }

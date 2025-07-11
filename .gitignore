@@ -144,3 +144,9 @@ coverage/
 .backup/
 .old/
 .archive/
+
+# Changes Folder
+changes/
+
+# Roo
+.rooignore
